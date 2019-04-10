@@ -1,5 +1,6 @@
 # Executables
 GO := /usr/local/go/bin/go
+RM := /bin/rm
 SHELL := /bin/bash
 
 # Naming and directories
@@ -102,7 +103,6 @@ tag: ## Create new git tag
 	git tag -sa $(VERSION) -m "$(VERSION)"
 	@echo "Run git push origin $(VERSION) to push your new tag to the remote."
 
-.PHONY: vendor
 vendor: ## Vendors dependencies
 	@$(RM) go.sum
 	@$(RM) -r vendor
