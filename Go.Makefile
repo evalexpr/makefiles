@@ -114,8 +114,8 @@ vendor: ## Vendors dependencies
 .PHONY: clean
 clean: ## Cleanup any binaries
 	@echo "+ $@"
-	$(RM) $(NAME)
-	$(RM) -r $(BUILDDIR)
+	$(RM) -f $(NAME)
+	$(RM) -rf $(BUILDDIR)
 
 .PHONY: help
 help:
