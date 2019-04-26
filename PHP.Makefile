@@ -17,7 +17,7 @@ PHP_SRC := config public src templates tests
 .PHONY: all
 all: lint test vendor ## Lints tests and vendors
 
-vendor: composer.json composer.lock ## Compare timestamp f composer.json/composer.lock and vendor, if out-of-date, dependencies will be updated
+vendor: composer.json composer.lock ## Validate and install dependencies
 	$(COMPOSER) validate --no-check-publish
 	$(COMPOSER) install
 
