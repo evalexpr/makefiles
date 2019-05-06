@@ -1,6 +1,6 @@
 # Executables
 GO := /usr/local/go/bin/go
-RM := /bin/rm
+RM := /bin/rm -f
 SHELL := /bin/bash
 
 # Naming and directories
@@ -114,8 +114,8 @@ vendor: ## Vendors dependencies
 .PHONY: clean
 clean: ## Cleanup any binaries
 	@echo "+ $@"
-	$(RM) -f $(NAME)
-	$(RM) -rf $(BUILDDIR)
+	$(RM) $(NAME)
+	$(RM) -r $(BUILDDIR)
 
 .PHONY: help
 help:
