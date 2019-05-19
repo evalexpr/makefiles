@@ -1,6 +1,6 @@
 VENV_NAME?=venv
 VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
-VENV_ACTIVATE=. $(VENV_NAME)/bin/activate
+VENV_ACTIVATE=$(VENV_NAME)/bin/activate
 
 PYTHON := $(VENV_BIN)/python
 FLASK := $(VENV_BIN)/flask
@@ -10,7 +10,7 @@ venv: $(VENV_ACTIVATE) ## Set up virtualenv and install deps
 $(VENV_ACTIVATE): setup.py
 	test -d $(VENV_NAME) || virtualenv -p python3 $(VENV_NAME)
 	$(PYTHON) -m pip install -U pip setuptools
-	$(PYTHON) -m pip install -e .[devel]
+	$(PYTHON) -m pip install -e .[dev]
 	touch $(VENV_ACTIVATE)
 
 .PHONY: lint
