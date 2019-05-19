@@ -1,7 +1,9 @@
-PYTHON := python
-FLASK := flask
 VENV_NAME?=venv
+VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
 VENV_ACTIVATE=. $(VENV_NAME)/bin/activate
+
+PYTHON := $(VENV_BIN)/python
+FLASK := $(VENV_BIN)/flask
 
 .PHONY: venv
 venv: $(VENV_ACTIVATE) ## Set up virtualenv and install deps
