@@ -18,6 +18,10 @@ lint: venv ## Run linting over the app
 	$(PYTHON) -m pylint --rcfile=pylintrc app
 	$(PYTHON) -m mypy --ignore-missing-imports app
 
+.PHONY: lint-fix
+lint-fix: ## Run autopep8 to fix linting issues
+	$(PYTHON) -m autopep8 --verbose --in-place --recursive --aggressive --aggressive app tests
+
 .PHONY: test
 test: venv ## Run the tests
 	$(PYTHON) -m pytest -vv tests
