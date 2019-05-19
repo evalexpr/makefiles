@@ -28,3 +28,7 @@ run: venv ## Start the flask server
 shell: venv ## Run the flask shell
 	$(FLASK) shell
 
+.PHONY: help
+help:
+	@awk -F ':|##' '/^[^\t].+?:.*?##/ { printf "\033[36m%-30s\033[0m %s\n", $$1, $$NF }' $(MAKEFILE_LIST)
+
