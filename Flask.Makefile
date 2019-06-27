@@ -3,6 +3,7 @@ VENV_BIN=$(shell pwd)/$(VENV_NAME)/bin
 VENV_ACTIVATE=$(VENV_NAME)/bin/activate
 
 PYTHON := $(VENV_BIN)/python
+PYTYPE := $(VENV_BIN)/pytype
 FLASK := $(VENV_BIN)/flask
 
 .PHONY: venv
@@ -16,7 +17,7 @@ $(VENV_ACTIVATE): setup.py
 .PHONY: lint
 lint: venv ## Run linting over the app
 	$(PYTHON) -m pylint --rcfile=pylintrc app
-	$(PYTHON) -m mypy --ignore-missing-imports app
+	$(PYTYPE) app
 
 .PHONY: lint-fix
 lint-fix: ## Run autopep8 to fix linting issues
