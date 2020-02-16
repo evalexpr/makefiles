@@ -2,7 +2,7 @@
 COMPOSER := composer
 PHPCS := ./vendor/bin/phpcs
 PHP := php
-PLINT := ./vendor/bin/parallel-lint 
+PLINT := ./vendor/bin/parallel-lint
 RM := /bin/rm
 RMT := ./vendor/bin/RMT
 

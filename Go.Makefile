@@ -1,5 +1,5 @@
 # Executables
-GO := /usr/local/go/bin/go
+GO := go
 RM := /bin/rm -f
 SHELL := /bin/bash
 
