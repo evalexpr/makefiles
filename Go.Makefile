@@ -45,9 +45,9 @@ fmt: ## Runs gofmt
 	@gofmt -s -l -w $(GO_SRC)
 
 .PHONY: lint
-lint: ## Runs golint
+lint: ## Runs golangci-lint
 	@echo "+ $@"
-	@golint $(GO_SRC)
+	@golangci-lint run
 
 .PHONY: test
 test: ## Runs tests
